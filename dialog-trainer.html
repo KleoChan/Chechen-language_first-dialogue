@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head><!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Чеченский язык: первый диалог | Диалоговый тренажёр</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Изучение чеченского языка, чеченский язык, Нохчийн мотт, диалоговый тренажер" name="keywords">
+    <meta content="Диалоговый тренажёр для изучения чеченского языка" name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .navbar-brand {
+            display: none !important;
+        }
+
+        .navbar-logo {
+            color: white !important;
+            background: transparent !important;
+            text-shadow: none !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            user-select: none !important;
+            margin-right: 10px;
+            font-size: 0.1px;
+        }
+
+        .navbar-nav {
+            margin-left: 0 !important;
+        }
+
+        .navbar-collapse {
+            justify-content: flex-start;
+        }
+
+        .navbar-nav .nav-link {
+            font-family: 'Nunito', sans-serif !important;
+            font-weight: 700 !important;
+            font-size: 15px !important;
+            letter-spacing: 0.5px !important;
+            text-transform: uppercase !important;
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 8px 0;
+        }
+
+        .dropdown-item {
+            padding: 8px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f5f5f5 !important;
+            color: var(--dark) !important;
+            padding-left: 28px;
+        }
+
+        .dropdown-item.active {
+            color: var(--secondary) !important;
+            background-color: transparent !important;
+        }
+
+        .dialog-item {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 5px solid #ffb524;
+            margin-bottom: 25px;
+        }
+
+        .dialog-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .dialog-item:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .dialog-item h5 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            color: #1b3c2a;
+            margin-bottom: 5px;
+        }
+
+        .dialog-status {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .status-not-started {
+            background: #f0f0f0;
+            color: #888;
+        }
+
+        .status-in-progress {
+            background: #fff3cd;
+            color: #856404;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .btn-dialog {
+            background: #ffb524;
+            border: none;
+            color: #1b3c2a;
+            font-weight: 700;
+            padding: 8px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .btn-dialog:hover {
+            background: #e69e1a;
+            color: #1b3c2a;
+            transform: scale(1.02);
+            text-decoration: none;
+        }
+
+        .btn-reset {
+            background: transparent;
+            border: 1px solid #dc3545;
+            color: #dc3545;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .btn-reset:hover {
+            background: #dc3545;
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-reset-small {
+            background: transparent;
+            border: 1px solid #856404;
+            color: #856404;
+            font-weight: 600;
+            padding: 3px 12px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-size: 11px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .btn-reset-small:hover {
+            background: #856404;
+            color: white;
+            text-decoration: none;
+        }
+
+        .dialog-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 9999;
+            flex-direction: column;
+        }
+
+        .dialog-overlay.active {
+            display: flex;
+        }
+
+        .dialog-overlay .header {
+            background: white;
+            padding: 15px 25px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .dialog-overlay .header .title {
+            font-weight: 700;
+            color: #1b3c2a;
+            font-size: 18px;
+        }
+
+        .dialog-overlay .header .status {
+            font-size: 14px;
+            color: #856404;
+            background: #fff3cd;
+            padding: 4px 16px;
+            border-radius: 50px;
+        }
+
+        .dialog-overlay .header .status.completed {
+            color: #155724;
+            background: #d4edda;
+        }
+
+        .dialog-overlay .header .close-btn {
+            background: #ffb524;
+            border: none;
+            color: #1b3c2a;
+            font-weight: 700;
+            padding: 8px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .dialog-overlay .header .close-btn:hover {
+            background: #e69e1a;
+        }
+
+        .dialog-overlay iframe {
+            flex: 1;
+            width: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 18px;
+            }
+            .dialog-overlay .header {
+                padding: 10px 15px;
+            }
+            .dialog-overlay .header .title {
+                font-size: 14px;
+            }
+            .dialog-overlay .header .close-btn {
+                font-size: 12px;
+                padding: 6px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Загрузка...</span>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav p-4 p-lg-0">
+                <span class="navbar-logo">Логотип</span>
+                <a href="index.html" class="nav-item nav-link">Главная</a>
+                <a href="about.html" class="nav-item nav-link">О проекте</a>
+                <a href="404.html" class="nav-item nav-link">Курс</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Ресурсы</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Команда</a>
+                        <a href="testimonial.html" class="dropdown-item">Отзывы</a>
+                        <a href="404.html" class="dropdown-item">Структура курса</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid p-0 mb-5">
+        <div style="background-image: url('img/carousel-1.jpg'); background-size: cover; background-position: center; min-height: 400px; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(27, 94, 42, 0.6); display: flex; align-items: center; justify-content: center;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 text-center">
+                            <h1 class="display-3 text-white animated slideInDown">Диалоговый тренажёр</h1>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Главная</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Диалоговый тренажёр</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-secondary px-3">Тренажёры</h6>
+                <h1 class="mb-5">Выберите диалог</h1>
+            </div>
+
+            <div class="row g-0 justify-content-center">
+                <div class="col-lg-10" id="dialogList">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dialog-overlay" id="dialogOverlay">
+        <div class="header">
+            <span class="title" id="dialogTitle">Диалог</span>
+            <span class="status" id="dialogStatus">В процессе...</span>
+            <button class="close-btn" onclick="closeDialog()">← К списку</button>
+        </div>
+        <iframe id="dialogIframe" src=""></iframe>
+    </div>
+
+    <div class="container-fluid footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-secondary mb-3">Чеченский язык: первый диалог</h4>
+                    <p class="mb-4">Гибридный учебно-методический комплекс для изучения чеченского языка русскоязычными пользователями.</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-vk"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-telegram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-secondary mb-3">Быстрые ссылки</h4>
+                    <a class="btn btn-link" href="about.html">О проекте</a>
+                    <a class="btn btn-link" href="team.html">Команда</a>
+                    <a class="btn btn-link" href="404.html">Политика конфиденциальности</a>
+                    <a class="btn btn-link" href="404.html">Условия использования</a>
+                    <a class="btn btn-link" href="404.html">Вопросы и ответы</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-secondary mb-3">Контакты</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-secondary me-3"></i>г. Пятигорск, Ставропольский край, Россия</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-secondary me-3"></i>+7 (928) 000-00-00</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-secondary me-3"></i>info@chechen-first-dialog.ru</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-secondary mb-3">Рассылка</h4>
+                    <p>Подпишитесь на новости и получите первый урок бесплатно!</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Ваш email">
+                        <button type="button" class="btn btn-secondary py-2 position-absolute top-0 end-0 mt-2 me-2">Подписаться</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom text-secondary" href="#">Чеченский язык: первый диалог</a>, 2024-2025. Все права защищены.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Главная</a>
+                            <a href="404.html">Cookies</a>
+                            <a href="404.html">Помощь</a>
+                            <a href="contact.html">Контакты</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // ============================================================
+        // НАСТРОЙКА ДИАЛОГОВ - УКАЖИТЕ ПУТИ К ВАШИМ ДИАЛОГАМ
+        // ============================================================
+        const dialogs = [{
+            id: 'meeting',
+            name: 'Встреча со старым знакомым',
+            path: 'dialogs/meeting/index.html'
+        }, {
+            id: 'guest',
+            name: 'Знакомство в гостях',
+            path: 'dialogs/guest/index.html'
+        }, {
+            id: 'enter',
+            name: 'Вход в дом, гости',
+            path: 'dialogs/enter/index.html'
+        }];
+
+        // ============================================================
+        // ВСЁ ОСТАЛЬНОЕ РАБОТАЕТ АВТОМАТИЧЕСКИ
+        // ============================================================
+
+        const STORAGE_KEY = 'dialog_statuses';
+
+        function getStatuses() {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            if (stored) {
+                try { return JSON.parse(stored); } catch (e) { return {}; }
+            }
+            return {};
+        }
+
+        function saveStatuses(statuses) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(statuses));
+        }
+
+        function getDialogStatus(dialogId) {
+            const statuses = getStatuses();
+            return statuses[dialogId] || 'not-started';
+        }
+
+        function setDialogStatus(dialogId, status) {
+            const statuses = getStatuses();
+            statuses[dialogId] = status;
+            saveStatuses(statuses);
+            renderDialogs();
+        }
+
+        function resetDialogStatus(dialogId) {
+            const statuses = getStatuses();
+            delete statuses[dialogId];
+            saveStatuses(statuses);
+            renderDialogs();
+        }
+
+        function getStatusText(status) {
+            switch (status) {
+                case 'not-started': return 'Не пройдено';
+                case 'in-progress': return 'В процессе';
+                case 'completed': return 'Завершено ✓';
+                default: return 'Не пройдено';
+            }
+        }
+
+        function getStatusClass(status) {
+            switch (status) {
+                case 'not-started': return 'status-not-started';
+                case 'in-progress': return 'status-in-progress';
+                case 'completed': return 'status-completed';
+                default: return 'status-not-started';
+            }
+        }
+
+        window.resetDialog = function(dialogId) {
+            if (confirm('Сбросить прогресс этого диалога?')) {
+                resetDialogStatus(dialogId);
+            }
+        };
+
+        function renderDialogs() {
+            const container = document.getElementById('dialogList');
+            let html = '';
+
+            dialogs.forEach((dialog, index) => {
+                const status = getDialogStatus(dialog.id);
+                const statusText = getStatusText(status);
+                const statusClass = getStatusClass(status);
+                const isCompleted = status === 'completed';
+                const isInProgress = status === 'in-progress';
+                const delay = 0.1 + (index * 0.2);
+
+                let btnText = 'Начать';
+                if (isCompleted) {
+                    btnText = 'Пройти заново';
+                } else if (isInProgress) {
+                    btnText = 'Продолжить';
+                }
+
+                // Показываем кнопку сброса только если есть прогресс (не "Не пройдено")
+                const showReset = status !== 'not-started';
+
+                html += `
+                    <div class="dialog-item wow fadeInUp" data-wow-delay="${delay}s">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <h5>${dialog.name}</h5>
+                                <div style="margin-top: 8px;">
+                                    <span class="dialog-status ${statusClass}">${statusText}</span>
+                                    ${showReset ? `<button class="btn-reset ms-2" onclick="resetDialog('${dialog.id}')">Сбросить</button>` : ''}
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                                <button class="btn-dialog" onclick="openDialog('${dialog.id}')">
+                                    ${btnText}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            if (typeof WOW !== 'undefined') {
+                new WOW().init();
+            }
+        }
+
+        window.updateDialogStatus = function(dialogId, status) {
+            setDialogStatus(dialogId, status);
+            if (status === 'completed') {
+                const statusEl = document.getElementById('dialogStatus');
+                statusEl.textContent = 'Завершено ✓';
+                statusEl.className = 'status completed';
+            }
+        };
+
+        window.markDialogInProgress = function(dialogId) {
+            const currentStatus = getDialogStatus(dialogId);
+            if (currentStatus !== 'completed') {
+                setDialogStatus(dialogId, 'in-progress');
+            }
+            const statusEl = document.getElementById('dialogStatus');
+            if (statusEl) {
+                statusEl.textContent = 'В процессе...';
+                statusEl.className = 'status';
+            }
+        };
+
+        window.openDialog = function(dialogId) {
+            const dialog = dialogs.find(d => d.id === dialogId);
+            if (!dialog) return;
+
+            const currentStatus = getDialogStatus(dialogId);
+
+            document.getElementById('dialogTitle').textContent = dialog.name;
+
+            const statusEl = document.getElementById('dialogStatus');
+            if (currentStatus === 'completed') {
+                statusEl.textContent = 'Завершено ✓';
+                statusEl.className = 'status completed';
+            } else {
+                statusEl.textContent = 'В процессе...';
+                statusEl.className = 'status';
+            }
+
+            const iframe = document.getElementById('dialogIframe');
+            iframe.src = dialog.path;
+
+            document.getElementById('dialogOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            if (currentStatus !== 'completed') {
+                markDialogInProgress(dialogId);
+            }
+        };
+
+        window.closeDialog = function() {
+            const iframe = document.getElementById('dialogIframe');
+            iframe.src = '';
+            document.getElementById('dialogOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        // Обработчик сообщений от диалогов
+        window.addEventListener('message', function(event) {
+            const data = event.data;
+            
+            // Завершение диалога
+            if (data && data.type === 'dialogComplete') {
+                const dialogId = data.dialogId;
+                if (dialogId) {
+                    setDialogStatus(dialogId, 'completed');
+                    setTimeout(function() {
+                        closeDialog();
+                        renderDialogs();
+                    }, 800);
+                }
+            }
+            
+            // Сброс диалога (Начать сначала)
+            if (data && data.type === 'dialogReset') {
+                const dialogId = data.dialogId;
+                if (dialogId) {
+                    resetDialogStatus(dialogId);
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderDialogs();
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const completedDialog = urlParams.get('completed');
+            if (completedDialog) {
+                setDialogStatus(completedDialog, 'completed');
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+            const resetDialog = urlParams.get('reset');
+            if (resetDialog) {
+                resetDialogStatus(resetDialog);
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.getElementById('spinner').classList.remove('show');
+            }, 500);
+        });
+    </script>
+
+</body>
+
+</html>

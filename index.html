@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Чеченский язык: первый диалог | Изучение чеченского языка онлайн</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Изучение чеченского языка, чеченский язык, Нохчийн мотт, обучение чеченскому, диалоговый тренажер" name="keywords">
+    <meta content="Чеченский язык: первый диалог — гибридный учебно-методический комплекс для изучения чеченского языка русскоязычными пользователями. Интерактивный учебник, веб-платформа, мобильное приложение." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        .header-carousel .owl-nav {
+            display: none !important;
+        }
+        .header-carousel .owl-dots {
+            display: none !important;
+        }
+        .section-spacer {
+            padding-top: 60px;
+        }
+        @media (max-width: 768px) {
+            .section-spacer {
+                padding-top: 40px;
+            }
+        }
+        .about-content {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        @media (min-width: 992px) {
+            .about-content {
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+        }
+        .about-cards .service-item {
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .service-item,
+        .course-item,
+        .team-item,
+        .testimonial-text,
+        .pricing-card,
+        .icon-card {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .service-item:hover,
+        .course-item:hover,
+        .team-item:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+            transform: translateY(-5px);
+        }
+        .testimonial-text {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+        }
+        @media (max-width: 768px) {
+            .header-carousel .owl-carousel-item img {
+                max-height: 350px;
+            }
+            .team-item .overflow-hidden img {
+                max-height: 200px;
+            }
+            .course-item .position-relative.overflow-hidden img {
+                max-height: 140px;
+            }
+            .about-content {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        .service-item.clickable {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .service-item.clickable:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Стили для невидимого логотипа */
+        .navbar-brand {
+            display: none !important;
+        }
+        
+        .navbar-logo {
+            color: white !important;
+            background: transparent !important;
+            text-shadow: none !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            user-select: none !important;
+            margin-right: 10px;
+            font-size: 0.1px;
+        }
+
+        .navbar-nav {
+            margin-left: 0 !important;
+        }
+        
+        .navbar-collapse {
+            justify-content: flex-start;
+        }
+        
+        .navbar-nav .nav-link {
+            font-family: 'Nunito', sans-serif !important;
+            font-weight: 700 !important;
+            font-size: 15px !important;
+            letter-spacing: 0.5px !important;
+            text-transform: uppercase !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Загрузка...</span>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav p-4 p-lg-0">
+                <!-- Абсолютно белый, невидимый логотип -->
+                <span class="navbar-logo">Логотип</span>
+                <a href="index.html" class="nav-item nav-link active">Главная</a>
+                <a href="about.html" class="nav-item nav-link">О проекте</a>
+                <a href="404.html" class="nav-item nav-link">Курс</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Ресурсы</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Команда</a>
+                        <a href="testimonial.html" class="dropdown-item">Отзывы</a>
+                        <a href="404.html" class="dropdown-item">Структура курса</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Контакты</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/carousel-1.jpg" alt="Изучение чеченского языка">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(27, 94, 42, 0.6);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h1 class="display-3 text-white animated slideInDown">Добро пожаловать в мир чеченского языка!</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Откройте для себя богатство чеченской культуры через изучение языка. Начните свой первый диалог уже сегодня!</p>
+                                <a href="" class="btn btn-secondary py-md-3 px-md-5 me-3 animated slideInLeft">Попробовать бесплатно</a>
+                                <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Узнать больше</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5 section-spacer">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-5 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3 h-100">
+                        <div class="p-4">
+                            <i class="fas fa-3x fa-headphones text-secondary mb-4"></i>
+                            <h5 class="mb-3">Фонетический курс</h5>
+                            <p>Профессиональная аудиозапись носителями языка. Алфавит, произношение, интонация.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a href="dialog-trainer.html" class="service-item text-center pt-3 h-100 clickable">
+                        <div class="p-4">
+                            <i class="fas fa-3x fa-comments text-secondary mb-4"></i>
+                            <h5 class="mb-3">Диалоговый тренажёр</h5>
+                            <p>Интерактивные диалоги с вариантами ответов и корректировкой. Преодолейте языковой барьер.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-secondary px-3">О проекте</h6>
+                <h1 class="mb-5">Чеченский язык: первый диалог — ваш путь к чеченскому языку</h1>
+            </div>
+            <div class="row justify-content-center about-content">
+                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.3s">
+                    <p class="mb-4 text-center fs-5"><strong>Гибридный учебно-методический комплекс</strong> для изучения чеченского языка русскоязычными пользователями на элементарном и базовом уровнях.</p>
+                    <p class="mb-5 text-center">Комплекс включает три взаимосвязанных компонента: <strong>электронный интерактивный учебник</strong>, <strong>веб-платформу</strong> и <strong>мобильное приложение</strong>.</p>
+                    
+                    <div class="row g-4 justify-content-center about-cards">
+                        <div class="col-md-4">
+                            <div class="service-item text-center pt-3 h-100">
+                                <div class="p-4">
+                                    <i class="fas fa-3x fa-book text-secondary mb-4"></i>
+                                    <h5 class="mb-3">Интерактивный учебник</h5>
+                                    <p>Полноценный учебный материал с упражнениями, аудио и интерактивными заданиями.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="service-item text-center pt-3 h-100">
+                                <div class="p-4">
+                                    <i class="fas fa-3x fa-laptop-code text-secondary mb-4"></i>
+                                    <h5 class="mb-3">Веб-платформа</h5>
+                                    <p>Доступ ко всем материалам онлайн, персонализация обучения, отслеживание прогресса.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="service-item text-center pt-3 h-100">
+                                <div class="p-4">
+                                    <i class="fas fa-3x fa-mobile-alt text-secondary mb-4"></i>
+                                    <h5 class="mb-3">Мобильное приложение</h5>
+                                    <p>Обучение в любом месте и в любое время. Полная синхронизация с веб-платформой.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <a class="btn btn-secondary py-3 px-5" href="about.html">Подробнее о проекте</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-secondary px-3">Структура курса</h6>
+                <h1 class="mb-5">Из чего состоит обучение</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-item bg-white">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/course-1.jpg" alt="Фонетический курс">
+                            <div class="w-100 d-flex justify-content-center position-absolute start-0 mb-4" style="bottom: -25px !important; left: 0; right: 0;">
+                                <a href="404.html" class="flex-shrink-0 btn btn-sm btn-secondary px-3 border-end" style="border-radius: 30px 0 0 30px;">Подробнее</a>
+                                <a href="404.html" class="flex-shrink-0 btn btn-sm btn-secondary px-3" style="border-radius: 0 30px 30px 0;">Начать</a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0" style="margin-top: 15px;">
+                            <h3 class="mb-0 course-price text-secondary">Бесплатно</h3>
+                            <div class="mb-3 mt-2">
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <small>(156)</small>
+                            </div>
+                            <h5 class="mb-4">Фонетический курс</h5>
+                            <p class="small">Алфавит, абруптивные звуки, дифтонги, правила чтения и интонация. Аудиопримеры от носителей языка.</p>
+                        </div>
+                        <div class="d-flex border-top">
+                            <small class="flex-fill text-center border-end py-2"><i class="fas fa-headphones text-secondary me-2"></i>40+ аудио</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fas fa-clock text-secondary me-2"></i>10 уроков</small>
+                            <small class="flex-fill text-center py-2"><i class="fas fa-users text-secondary me-2"></i>Для начинающих</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="course-item bg-white">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/course-2.jpg" alt="Основной курс">
+                            <div class="w-100 d-flex justify-content-center position-absolute start-0 mb-4" style="bottom: -25px !important; left: 0; right: 0;">
+                                <a href="404.html" class="flex-shrink-0 btn btn-sm btn-secondary px-3 border-end" style="border-radius: 30px 0 0 30px;">Подробнее</a>
+                                <a href="404.html" class="flex-shrink-0 btn btn-sm btn-secondary px-3" style="border-radius: 0 30px 30px 0;">Начать</a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0" style="margin-top: 15px;">
+                            <h3 class="mb-0 course-price text-secondary">350 ₽<small>/мес</small></h3>
+                            <div class="mb-3 mt-2">
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <small>(89)</small>
+                            </div>
+                            <h5 class="mb-4">Основной курс (А1)</h5>
+                            <p class="small">12 тематических уроков: приветствие, семья, дом, еда, хобби, путешествия. Грамматика, лексика, диалоги.</p>
+                        </div>
+                        <div class="d-flex border-top">
+                            <small class="flex-fill text-center border-end py-2"><i class="fas fa-book text-secondary me-2"></i>12 уроков</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fas fa-comments text-secondary me-2"></i>Диалоговый тренажёр</small>
+                            <small class="flex-fill text-center py-2"><i class="fas fa-globe text-secondary me-2"></i>Культурные справки</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="course-item bg-white">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/course-3.jpg" alt="Бумажный учебник">
+                            <div class="w-100 d-flex justify-content-center position-absolute start-0 mb-4" style="bottom: -25px !important; left: 0; right: 0;">
+                                <a href="404.html" class="flex-shrink-0 btn btn-sm btn-secondary px-3 border-end" style="border-radius: 30px 0 0 30px;">Подробнее</a>
+                                <a href="404.html" class="flex-shrink-0 btn btn-sm btn-secondary px-3" style="border-radius: 0 30px 30px 0;">Купить</a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0" style="margin-top: 15px;">
+                            <h3 class="mb-0 course-price text-secondary">800 ₽</h3>
+                            <div class="mb-3 mt-2">
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <small>(45)</small>
+                            </div>
+                            <h5 class="mb-4">Бумажный учебник</h5>
+                            <p class="small">Печатная версия базового курса с QR-кодами. Переход к аудио и интерактивным упражнениям на платформе.</p>
+                        </div>
+                        <div class="d-flex border-top">
+                            <small class="flex-fill text-center border-end py-2"><i class="fas fa-qrcode text-secondary me-2"></i>QR-коды</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fas fa-shipping-fast text-secondary me-2"></i>Доставка по России</small>
+                            <small class="flex-fill text-center py-2"><i class="fas fa-download text-secondary me-2"></i>Аудио в подарок</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-secondary px-3">Команда</h6>
+                <h1 class="mb-5">Разработчики проекта</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-white">
+                        <div class="overflow-hidden" style="border-radius: 20px 20px 0 0;">
+                            <img class="img-fluid" src="img/team-1.jpg" alt="Екатерина">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-white d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-secondary mx-1" href=""><i class="fab fa-vk"></i></a>
+                                <a class="btn btn-sm-square btn-secondary mx-1" href=""><i class="fab fa-telegram"></i></a>
+                                <a class="btn btn-sm-square btn-secondary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0 team-name">Екатерина</h5>
+                            <small class="team-position">лингвист, методист, программист</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item bg-white">
+                        <div class="overflow-hidden" style="border-radius: 20px 20px 0 0;">
+                            <img class="img-fluid" src="img/team-2.jpg" alt="Диана">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-white d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-secondary mx-1" href=""><i class="fab fa-vk"></i></a>
+                                <a class="btn btn-sm-square btn-secondary mx-1" href=""><i class="fab fa-telegram"></i></a>
+                                <a class="btn btn-sm-square btn-secondary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0 team-name">Диана</h5>
+                            <small class="team-position">маркетолог, лингвист, дизайнер</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item bg-white">
+                        <div class="overflow-hidden" style="border-radius: 20px 20px 0 0;">
+                            <img class="img-fluid" src="img/team-3.jpg" alt="Седа">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-white d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-secondary mx-1" href=""><i class="fab fa-vk"></i></a>
+                                <a class="btn btn-sm-square btn-secondary mx-1" href=""><i class="fab fa-telegram"></i></a>
+                                <a class="btn btn-sm-square btn-secondary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0 team-name">Седа</h5>
+                            <small class="team-position">лингвист, методист, кавказовед</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="section-title bg-white text-center text-secondary px-3">Отзывы</h6>
+                <h1 class="mb-5">Что говорят наши ученики</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel position-relative">
+                <div class="testimonial-item text-center">
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Анна</h5>
+                    <div class="testimonial-text bg-white text-center p-4" style="border-radius: 20px;">
+                        <p class="mb-0">«Благодаря курсу я смогла освоить базовые фразы для общения с пациентами. Очень удобно, что есть мобильное приложение!»</p>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Дмитрий</h5>
+                    <div class="testimonial-text bg-white text-center p-4" style="border-radius: 20px;">
+                        <p class="mb-0">«Отличный курс! Диалоговый тренажёр помогает преодолеть языковой барьер. Культурологические справки — отдельный плюс.»</p>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Елена</h5>
+                    <div class="testimonial-text bg-white text-center p-4" style="border-radius: 20px;">
+                        <p class="mb-0">«Как филолог, оценила системный подход. Фонетика разобрана великолепно — даже абруптивные звуки стало понятно!»</p>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Максим</h5>
+                    <div class="testimonial-text bg-white text-center p-4" style="border-radius: 20px;">
+                        <p class="mb-0">«Бумажный учебник с QR-кодами — отличное дополнение! Читаешь, сканируешь и сразу слышишь произношение. Рекомендую!»</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-secondary mb-3">Чеченский язык: первый диалог</h4>
+                    <p class="mb-4">Гибридный учебно-методический комплекс для изучения чеченского языка русскоязычными пользователями.</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-vk"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-telegram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-secondary mb-3">Быстрые ссылки</h4>
+                    <a class="btn btn-link" href="about.html">О проекте</a>
+                    <a class="btn btn-link" href="team.html">Команда</a>
+                    <a class="btn btn-link" href="404.html">Политика конфиденциальности</a>
+                    <a class="btn btn-link" href="404.html">Условия использования</a>
+                    <a class="btn btn-link" href="404.html">Вопросы и ответы</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-secondary mb-3">Контакты</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-secondary me-3"></i>г. Пятигорск, Ставропольский край, Россия</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-secondary me-3"></i>+7 (928) 000-00-00</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-secondary me-3"></i>info@chechen-first-dialog.ru</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-secondary mb-3">Рассылка</h4>
+                    <p>Подпишитесь на новости и получите первый урок бесплатно!</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Ваш email">
+                        <button type="button" class="btn btn-secondary py-2 position-absolute top-0 end-0 mt-2 me-2">Подписаться</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom text-secondary" href="#">Чеченский язык: первый диалог</a>, 2024-2025. Все права защищены.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Главная</a>
+                            <a href="404.html">Cookies</a>
+                            <a href="404.html">Помощь</a>
+                            <a href="contact.html">Контакты</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
