@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Знакомство в гостях</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f8f9fa;
+            font-family: 'Nunito', sans-serif;
+        }
+        #container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        #backBtn {
+            background: #ffb524;
+            border: none;
+            color: #1b3c2a;
+            font-weight: 700;
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin: 15px 20px;
+            align-self: flex-start;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        #backBtn:hover {
+            background: #e69e1a;
+            transform: scale(1.02);
+        }
+        #dialogFrame {
+            flex: 1;
+            width: 100%;
+            border: none;
+            background: white;
+        }
+        .status-bar {
+            background: white;
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .status-bar .title {
+            font-weight: 700;
+            color: #1b3c2a;
+            font-size: 16px;
+        }
+        .status-bar .status {
+            font-size: 14px;
+            color: #666;
+        }
+        .status-bar .status.completed {
+            color: #155724;
+            background: #d4edda;
+            padding: 4px 16px;
+            border-radius: 50px;
+        }
+        .status-bar .status.in-progress {
+            color: #856404;
+            background: #fff3cd;
+            padding: 4px 16px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div class="status-bar">
+        <span class="title">Знакомство в гостях</span>
+        <span class="status in-progress" id="statusLabel">В процессе...</span>
+        <button id="backBtn" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i> К списку диалогов
+        </button>
+    </div>
+    <iframe id="dialogFrame" src="index.html"></iframe>
+</div>
+
+<script>
+    const DIALOG_ID = 'guest';
+    let isCompleted = false;
+
+    function markCompleted() {
+        if (isCompleted) return;
+        isCompleted = true;
+        const label = document.getElementById('statusLabel');
+        label.textContent = 'Завершено ✓';
+        label.className = 'status completed';
+
+        if (window.parent && window.parent.updateDialogStatus) {
+            window.parent.updateDialogStatus(DIALOG_ID, 'completed');
+        }
+        if (window.parent) {
+            window.parent.postMessage({
+                type: 'dialogComplete',
+                dialogId: DIALOG_ID
+            }, '*');
+        }
+    }
+
+    function markInProgress() {
+        if (window.parent && window.parent.markDialogInProgress) {
+            window.parent.markDialogInProgress(DIALOG_ID);
+        }
+    }
+
+    function goBack() {
+        if (isCompleted) {
+            window.location.href = '../../dialog-trainer.html?completed=' + DIALOG_ID;
+        } else {
+            window.location.href = '../../dialog-trainer.html';
+        }
+    }
+
+    markInProgress();
+
+    const iframe = document.getElementById('dialogFrame');
+    let checkInterval = setInterval(function() {
+        try {
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+            if (!doc) return;
+
+            const elements = doc.querySelectorAll('button, a, .btn, [role="button"], .finish, .complete, .done');
+            for (let el of elements) {
+                const text = (el.textContent || '').toLowerCase();
+                if (text.includes('завершить') || text.includes('готово') || 
+                    text.includes('finish') || text.includes('complete') || text.includes('done') ||
+                    text.includes('продолжить')) {
+                    if (!el._handled) {
+                        el._handled = true;
+                        el.addEventListener('click', function() {
+                            setTimeout(markCompleted, 500);
+                        });
+                    }
+                }
+            }
+
+            const completeElements = doc.querySelectorAll(
+                '.complete-screen, .finish-screen, .result-screen, ' +
+                '[class*="complete"], [class*="finish"], [class*="result"]'
+            );
+            for (let el of completeElements) {
+                if (el.offsetParent !== null && el.offsetHeight > 0) {
+                    markCompleted();
+                    break;
+                }
+            }
+
+            const iframeUrl = iframe.contentWindow.location.href;
+            if (iframeUrl.includes('complete') || iframeUrl.includes('finish') || iframeUrl.includes('result')) {
+                markCompleted();
+            }
+        } catch(e) {}
+    }, 2000);
+
+    setTimeout(() => clearInterval(checkInterval), 120000);
+
+    window.addEventListener('message', function(event) {
+        const iframe = document.getElementById('dialogFrame');
+        if (event.source !== iframe.contentWindow) return;
+        const data = event.data;
+        if (data && data.type === 'finish') {
+            markCompleted();
+        }
+        if (data && data.type === 'progress') {
+            const label = document.getElementById('statusLabel');
+            if (label && data.progress !== undefined) {
+                const progress = Math.round(data.progress * 100);
+                label.textContent = `Прогресс: ${progress}%`;
+                label.className = 'status in-progress';
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
